@@ -15,21 +15,20 @@
         <button (click)="cancel()" mat-button style="font-style: italic;">Cancel</button>
     </div>
 
-    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="space-evenly" fxLayout.xs="column">
-      <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column">
-        <div fxLayoutGap="10px">
-          <label for="name">Name</label>
-          <mat-form-field appearance="outline">
+
+    <div fxLayout="column" fxLayout.xs="column">
+      <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column">
+        <label for="name">Name</label>
+          <mat-form-field  appearance="outline" fxFlex="80%">
             <mat-label>Name</mat-label>
             <input matInput placeholder="Name" formControlName="name">
           </mat-form-field>
-        </div>
       </div>
 
-      <div fxLayout="row-wrap" fxLayoutAlign="space-evenly center" fxLayout.xs="column">
-        <div fxLayoutGap="10px">
-          <label for="phone">Phone Number</label>
-          <mat-form-field appearance="outline" >
+      <div fxLayout="column" fxLayout.xs="column">
+        <div fxLayoutGap="10px" fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column">
+          <label for="phone">Phone</label>
+          <mat-form-field appearance="outline" fxFlex="80%">
             <mat-label>Phone Number</mat-label>
             <input matInput placeholder="Your Phone Number" formControlName="phoneNumber">
           </mat-form-field>
@@ -38,7 +37,7 @@
 
       <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column">
         <label for="Address">Address</label>
-        <mat-form-field appearance="outline" fxFlex="70">
+        <mat-form-field appearance="outline" fxFlex="79%">
           <mat-label>Address</mat-label>
           <input matInput placeholder="Address" formControlName="address">
         </mat-form-field>
@@ -77,7 +76,6 @@
       <div fxLayoutAlign="center center" fxLayoutGap="180px">
         <button type="submit" mat-raised-button color="primary">Add Contact</button>
       </div>
-
     </div>
   </form>
 </div>
