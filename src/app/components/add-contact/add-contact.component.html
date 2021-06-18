@@ -1,4 +1,5 @@
 <!-- <div fxLayout="column" fxFlex="100"> -->
+  <div>
 <header class="header-content header">
   <div class="logo-content">
       <img src="../../../assets/logo.png" alt="Logo">
@@ -8,7 +9,7 @@
       </div>
   </div>
 </header>
-<div class="form-content" fxLayout.xs="column">
+<div class="form-content"  fxLayout.xs="column">
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-head">
         <div class="form-head-text">Person Address Form</div>
@@ -16,9 +17,9 @@
     </div>
 
 
-    <div fxLayout="column" fxLayout.xs="column">
+    <div fxLayout="column" fxLayout.xs="column" class="top-space">
       <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column">
-        <label for="name">Name</label>
+        <label for="name" class="space">Name</label>
           <mat-form-field  appearance="outline" fxFlex="80%">
             <mat-label>Name</mat-label>
             <input matInput placeholder="Name" formControlName="name" required>
@@ -27,7 +28,7 @@
 
       <div fxLayout="column" fxLayout.xs="column">
         <div fxLayoutGap="10px" fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column">
-          <label for="phone">Phone</label>
+          <label for="phone"  class="space">Phone</label>
           <mat-form-field appearance="outline" fxFlex="80%">
             <mat-label>Phone Number</mat-label>
             <input matInput placeholder="Your Phone Number" formControlName="phoneNumber" required>
@@ -38,15 +39,15 @@
       <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column">
         <label for="Address">Address</label>
         <mat-form-field appearance="outline" fxFlex="79%">
-          <mat-label>Address</mat-label>
+          <mat-label  class="space">Address</mat-label>
           <input matInput placeholder="Address" formControlName="address" required>
         </mat-form-field>
       </div>
 
-      <div fxLayout="row-wrap" fxLayoutAlign="center center"  fxLayout.xs="column">
-        <div fxLayoutGap="10px">
-          <label for="state">State</label>
-          <mat-form-field appearance="outline" >
+      <div fxLayout="row-wrap" fxLayoutAlign="center center"  fxLayout.xs="column" class="example-container">
+        <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column" class="example-container">
+          <label for="state"  class="space">State</label>
+          <mat-form-field appearance="outline" fxLayoutGap="10px" >
             <mat-select formControlName="state" placeholder="State" (valueChange)="setCities($event)">
               <mat-option *ngFor="let state of citiesAndStates" [value]="state" >
                 {{state.state}}
@@ -54,8 +55,8 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div fxLayoutGap="10px">
-          <label for="city">City</label>
+        <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column" class="example-container">
+          <label for="city"  class="space">City</label>
           <mat-form-field appearance="outline" >
             <mat-select placeholder="City" formControlName="city">
               <mat-option *ngFor="let city of cities" [value]="city">
@@ -64,9 +65,9 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div fxLayoutGap="10px">
+        <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column" class="example-container">
           <label for="zip">Zip Code</label>
-          <mat-form-field appearance="outline" >
+          <mat-form-field  appearance="outline" >
             <mat-label>Zip Code</mat-label>
             <input matInput placeholder="Zip Code" formControlName="zip" required>
           </mat-form-field>
@@ -78,4 +79,5 @@
       </div>
     </div>
   </form>
+</div>
 </div>

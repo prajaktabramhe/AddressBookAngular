@@ -17,25 +17,27 @@ export class AddContactComponent implements OnInit {
     {state: 'Rajasthan' ,cities:['Kota', 'Jaipur', 'Jaisalmer', 'Bikaner']},
     {state: 'Maharashtra', cities: ['Pune', 'Mumbai', 'Nagpur']},
     {state: 'Uttranchal', cities: ['Badrinath', 'Kedarnath', 'Manali']},
-    {state: 'Punjab', cities: ['Amritsar', 'Chandigarh', 'DEF', 'GHI']}
+    {state: 'Punjab', cities: ['Amritsar', 'Chandigarh', 'Patiala', 'Jalandhar']}
   ]
 
   form: FormGroup;
   constructor(private formBuilder: FormBuilder,
               private contactService: ContactServiceService,
-              private router: Router) {
+              private router: Router) 
+              {
+                this.form = this.formBuilder.group({
+                  name: ['', Validators.required],
+                  phoneNumber: ['', [Validators.required, Validators.maxLength(10)]],
+                  address: ['', Validators.required],
+                  city: ['', Validators.required],
+                  state: ['', Validators.required],
+                  zip: ['', Validators.required],
+                })
+                console.log(this.citiesAndStates);
               }
 
   ngOnInit(){
-    this.form = this.formBuilder.group({
-      name: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      zip: ['', Validators.required],
-    })
-    console.log(this.citiesAndStates);
+    
   }
 
   onSubmit(){
