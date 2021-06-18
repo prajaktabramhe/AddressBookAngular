@@ -20,8 +20,12 @@ export class HttpService {
   delete(url, options){
     return this.http.delete(this.baseUrl+url, options)
   }
+  
   Post(url: any, data: any, options: any){
     return this.httpClient.post( "http://localhost:8081", data, options);
   }
 
+  update(url, data){
+    return this.http.put(this.baseUrl+url, data)
+  }
 }

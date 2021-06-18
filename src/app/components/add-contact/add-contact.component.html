@@ -17,34 +17,68 @@
     </div>
 
 
-    <div fxLayout="column" fxLayout.xs="column" class="top-space">
-      <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column">
-        <label for="name" class="space">Name</label>
-          <mat-form-field  appearance="outline" fxFlex="80%">
+    <div fxLayout="column" fxLayout.xs="column" class="top-space" >
+     <div fxLayout="column" fxLayout.xs="column" class="space">
+        <label for="name" >Name</label>
+          <mat-form-field  appearance="outline" fxFlex="82%">
             <mat-label>Name</mat-label>
             <input matInput placeholder="Name" formControlName="name" required>
           </mat-form-field>
       </div>
 
-      <div fxLayout="column" fxLayout.xs="column">
-        <div fxLayoutGap="10px" fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column">
-          <label for="phone"  class="space">Phone</label>
-          <mat-form-field appearance="outline" fxFlex="80%">
+      <div fxLayout="column" fxLayout.xs="column" class="space">
+         <label for="phone"  >Phone</label>
+          <mat-form-field appearance="outline" fxFlex="82%">
             <mat-label>Phone Number</mat-label>
             <input matInput placeholder="Your Phone Number" formControlName="phoneNumber" required>
           </mat-form-field>
-        </div>
       </div>
 
-      <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column">
+      <div fxLayout="column" fxLayout.xs="column" class="space">
         <label for="Address">Address</label>
-        <mat-form-field appearance="outline" fxFlex="79%">
+        <mat-form-field appearance="outline" fxFlex="82%">
           <mat-label  class="space">Address</mat-label>
           <input matInput placeholder="Address" formControlName="address" required>
         </mat-form-field>
       </div>
-
-      <div fxLayout="row-wrap" fxLayoutAlign="center center"  fxLayout.xs="column" class="example-container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div fxLayoutGap="10px"  fxLayout.xs="column" >
+              <label for="state">State</label>
+              <mat-form-field appearance="outline" fxLayoutGap="10px" >
+                <mat-select formControlName="state" placeholder="State" (valueChange)="setCities($event)">
+                  <mat-option *ngFor="let state of citiesAndStates" [value]="state" >
+                    {{state.state}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col">
+            <div fxLayoutGap="10px" fxLayout.xs="column" >
+              <label for="city" >City</label>
+              <mat-form-field appearance="outline" >
+                <mat-select placeholder="City" formControlName="city">
+                  <mat-option *ngFor="let city of cities" [value]="city">
+                    {{city}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col">
+            <div fxLayoutGap="10px" fxLayout.xs="column">
+              <label for="zip">Zip Code</label>
+              <mat-form-field  appearance="outline" >
+                <mat-label>Zip Code</mat-label>
+                <input matInput placeholder="Zip Code" formControlName="zip" required>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div fxLayout="row-wrap" fxLayoutAlign="center center"  fxLayout.xs="column" class="example-container">
         <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column" class="example-container">
           <label for="state"  class="space">State</label>
           <mat-form-field appearance="outline" fxLayoutGap="10px" >
@@ -54,8 +88,8 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-        </div>
-        <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column" class="example-container">
+        </div> -->
+        <!-- <div fxLayoutGap="10px" fxLayoutAlign="center center" fxLayout.xs="column" class="example-container">
           <label for="city"  class="space">City</label>
           <mat-form-field appearance="outline" >
             <mat-select placeholder="City" formControlName="city">
@@ -72,7 +106,7 @@
             <input matInput placeholder="Zip Code" formControlName="zip" required>
           </mat-form-field>
         </div>
-      </div>
+      </div> -->
 
       <div fxLayoutAlign="center center" fxLayoutGap="180px">
         <button [disabled]="!form.valid" type="submit" mat-raised-button color="primary">Add Contact</button>

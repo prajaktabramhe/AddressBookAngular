@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { DialogContentExampleDialog, HomeComponent } from './components/home/home.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,6 +17,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSelectModule} from '@angular/material/select';
 import { LoginComponent } from './components/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
+import { UpdateComponent } from './components/update/update.component';
+
+
 
 
 @NgModule({
@@ -25,7 +28,11 @@ import {MatIconModule} from '@angular/material/icon';
     HomeComponent,
     AddContactComponent,
     LoginComponent,
-  ],
+    UpdateComponent,
+    DialogContentExampleDialog
+    
+    ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -41,7 +48,9 @@ import {MatIconModule} from '@angular/material/icon';
     FlexLayoutModule,
     MatDialogModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+  
    
   ],
   providers: [],
