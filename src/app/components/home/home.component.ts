@@ -24,13 +24,28 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  
+
   delete(id){
+   
     this.contactService.deleteEmployee(id).subscribe((response) => {
       console.log("Deletion SuccessFull")
       this.getAllContacts();
     });
   }
 
+  ConfirmDelete(id:any)
+  {
+    var x = confirm("Are you sure you want to delete?");
+    if (x)
+    {
+      this.delete(id);
+      return true;
+    }
+        
+    else
+      return false;
+  }
   addNewContact(){
     console.log('redirecting now');
     this.router.navigateByUrl('add')
