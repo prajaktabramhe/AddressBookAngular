@@ -15,8 +15,8 @@
   <div class="emp-detail-text">
        Personal Details
   </div>
-  <a class="add-button" mat-raised-button routerLinkActive="active">
-    <img src="../../../assets/add-24px.svg" (click)="addNewContact()" alt="">Add Contact
+  <a class="add-button" (click)="addNewContact()" mat-raised-button routerLinkActive="active">
+    <img src="../../../assets/add-24px.svg" alt="">Add Contact
   </a>
 </div>
 <div class="table-main">
@@ -40,7 +40,8 @@
       <td>{{contact.city}}</td>
       <td>{{contact.zip}}</td>
       <td>
-        <img id="{{contact.addressBookId}}" (click)="ConfirmDelete(contact.addressBookId)"  alt="delete " src="../../../assets/delete-black-18dp.svg">
+        <button mat-button (click)="ConfirmDelete(contact.addressBookId)"><img id="{{contact.addressBookId}}"  alt="delete " src="../../../assets/delete-black-18dp.svg"></button>
+       <img id="{{contact.addressBookId}}" (click)="update(contact)"  alt="edit" src="../../../assets/create-black-18dp.svg"> 
       </td>
     </tr>
   </table>

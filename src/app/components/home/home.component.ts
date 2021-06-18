@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactServiceService } from './../../services/contact/contact-service.service';
 import { MatDialog } from '@angular/material/dialog';
+import { UpdateComponent } from './../update/update.component';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
 
   contactList: any;
@@ -16,11 +19,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getAllContacts();
   }
+  
 
   getAllContacts(){
     this.contactService.getAllContacts().subscribe((res: any) => {
       console.log(res);
-      this.contactList = res.data;
+      this.contactList = res.data.sort();
     })
   }
 
@@ -36,18 +40,39 @@ export class HomeComponent implements OnInit {
 
   ConfirmDelete(id:any)
   {
-    var x = confirm("Are you sure you want to delete?");
-    if (x)
-    {
-      this.delete(id);
-      return true;
-    }
-        
-    else
-      return false;
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+    
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.delete(id);
+        dialogRef.close();
+      }
+    });
   }
+
+   update(contact){
+    console.log(contact);
+    const dialogRef = this.dialog.open(UpdateComponent, {
+      width: '70%',
+      height: '85%',
+      data: {contact}
+    });
+    this.dialog.afterAllClosed.subscribe((response) => {
+      this.getAllContacts();
+    })
+  }
+
+
   addNewContact(){
     console.log('redirecting now');
     this.router.navigateByUrl('add')
   }
+}
+
+@Component({
+  selector: 'dialog-content-example-dialog',
+  templateUrl: 'dialog-content-example-dialog.html',
+})
+export class DialogContentExampleDialog {
+
 }
