@@ -6,6 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ContactServiceService {
+  url: string;
 
   constructor(private http: HttpService) { }
 
@@ -23,5 +24,7 @@ export class ContactServiceService {
   deleteEmployee(id){
     return this.http.delete('delete/' + id, this.options)
   }
-  
+  loginService(data: any) {
+    return this.http.Post("",data, this.options);
+  }
 }

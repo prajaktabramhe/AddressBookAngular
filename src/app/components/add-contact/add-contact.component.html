@@ -21,7 +21,7 @@
         <label for="name">Name</label>
           <mat-form-field  appearance="outline" fxFlex="80%">
             <mat-label>Name</mat-label>
-            <input matInput placeholder="Name" formControlName="name">
+            <input matInput placeholder="Name" formControlName="name" required>
           </mat-form-field>
       </div>
 
@@ -30,7 +30,7 @@
           <label for="phone">Phone</label>
           <mat-form-field appearance="outline" fxFlex="80%">
             <mat-label>Phone Number</mat-label>
-            <input matInput placeholder="Your Phone Number" formControlName="phoneNumber">
+            <input matInput placeholder="Your Phone Number" formControlName="phoneNumber" required>
           </mat-form-field>
         </div>
       </div>
@@ -39,7 +39,7 @@
         <label for="Address">Address</label>
         <mat-form-field appearance="outline" fxFlex="79%">
           <mat-label>Address</mat-label>
-          <input matInput placeholder="Address" formControlName="address">
+          <input matInput placeholder="Address" formControlName="address" required>
         </mat-form-field>
       </div>
 
@@ -68,13 +68,13 @@
           <label for="zip">Zip Code</label>
           <mat-form-field appearance="outline" >
             <mat-label>Zip Code</mat-label>
-            <input matInput placeholder="Zip Code" formControlName="zip">
+            <input matInput placeholder="Zip Code" formControlName="zip" required>
           </mat-form-field>
         </div>
       </div>
 
       <div fxLayoutAlign="center center" fxLayoutGap="180px">
-        <button type="submit" mat-raised-button color="primary">Add Contact</button>
+        <button [disabled]="!form.valid" type="submit" mat-raised-button color="primary">Add Contact</button>
       </div>
     </div>
   </form>

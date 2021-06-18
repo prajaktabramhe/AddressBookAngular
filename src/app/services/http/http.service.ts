@@ -8,6 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class HttpService {
   
   baseUrl = environment.baseUrl;
+  httpClient: any;
   constructor(private http: HttpClient) { }
 
   post(url, data, options){
@@ -19,5 +20,8 @@ export class HttpService {
   delete(url, options){
     return this.http.delete(this.baseUrl+url, options)
   }
-  
+  Post(url: any, data: any, options: any){
+    return this.httpClient.post( "http://localhost:8081", data, options);
+  }
+
 }

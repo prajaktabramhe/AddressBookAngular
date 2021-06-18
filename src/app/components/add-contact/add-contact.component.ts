@@ -4,13 +4,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-add-contact',
   templateUrl: './add-contact.component.html',
   styleUrls: ['./add-contact.component.scss']
 })
 export class AddContactComponent implements OnInit {
-
+  value: number;
   citiesAndStates = [
     {state: 'Delhi', cities: ['Delhi']},
     {state: 'Rajasthan' ,cities:['Kota', 'Jaipur', 'Jaisalmer', 'Bikaner']},
@@ -20,7 +21,6 @@ export class AddContactComponent implements OnInit {
   ]
 
   form: FormGroup;
-
   constructor(private formBuilder: FormBuilder,
               private contactService: ContactServiceService,
               private router: Router) {
@@ -50,6 +50,7 @@ export class AddContactComponent implements OnInit {
         state: this.form.value.state.state,
         zip: this.form.value.zip
       };
+      
       console.log(this.form.value.state);
       
       this.contactService.addContact(requestObj).subscribe((response) => {

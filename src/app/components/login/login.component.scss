@@ -1,0 +1,30 @@
+.logo {
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    top: -25%;
+    left: 20%;
+    z-index: 1;
+    /* width: 100px; */
+    display: flex;
+    justify-content: center;
+    height: 12%;
+    width: 6%;
+    box-shadow: 1px 2px 12px 6px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.login_button
+{
+background-color:#8bc34a;
+color: white;
+}
+
+.login_card {
+    padding-top: 70px;
+    box-shadow: 1px 2px 12px 6px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.right_button
+{
+    padding-left: 22%;
+}

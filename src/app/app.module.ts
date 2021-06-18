@@ -15,12 +15,16 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSelectModule} from '@angular/material/select';
+import { LoginComponent } from './components/login/login.component';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddContactComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import {MatSelectModule} from '@angular/material/select';
     RouterModule,
     FlexLayoutModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
