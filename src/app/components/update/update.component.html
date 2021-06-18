@@ -1,0 +1,75 @@
+  <div class="form-content" fxLayout.xs="column">
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-head">
+          <div class="form-head-text">Person Address Form</div>
+          <button  (click)="cancel()" mat-button style="font-style: italic;">Cancel</button>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="space-evenly" fxLayout.xs="column">
+        <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column" >
+        <div fxLayoutGap="10px">
+            <label for="name">Name</label>
+            <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Last Name" [(ngModel)]="name" formControlName="name">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout="row-wrap" fxLayoutAlign="space-evenly center" fxLayout.xs="column">
+          <div fxLayoutGap="10px">
+            <label for="phone">Phone Number</label>
+            <mat-form-field appearance="outline" >
+              <mat-label>Phone Number</mat-label>
+              <input matInput placeholder="Your Phone Number" [(ngModel)]="phoneNumber" formControlName="phoneNumber">
+            </mat-form-field>
+          </div>
+           </div>
+
+        <div fxLayoutGap="10px" fxLayoutAlign="center center">
+          <label for="Address"> Address</label>
+          <mat-form-field appearance="outline" fxFlex="70">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Address" [(ngModel)]="address" formControlName="address">
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row-wrap" fxLayoutAlign="space-evenly center" fxLayout.xs="column">
+          <div fxLayoutGap="10px">
+            <label for="state">State</label>
+            <mat-form-field appearance="outline" >
+             <mat-select [(value)]="stateselect" formControlName="state" placeholder="State" (valueChange)="setCities($event)">
+                <mat-option *ngFor="let state of citiesAndStates" [value]="state" >
+                  {{state.state}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div fxLayoutGap="10px">
+            <label for="city">City</label>
+            <mat-form-field appearance="outline" >
+             <mat-select formControlName="city" [(value)]="city" placeholder="City" >
+                <mat-option *ngFor="let city of cities" [value]="city" >
+                  {{city}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div fxLayoutGap="10px">
+            <label for="zip">Zip Code</label>
+            <mat-form-field appearance="outline" >
+              <mat-label>Zip Code</mat-label>
+              <input matInput placeholder="Zip Code" [(ngModel)]="zip" formControlName="zip">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayoutAlign="center center" fxLayoutGap="180px">
+          <button type="submit" mat-raised-button color="primary">Add Contact</button>
+        </div>
+
+        <div></div>
+      </div>
+    </form>
+  </div>
+
