@@ -1,5 +1,4 @@
-<!-- <div fxLayout="column" fxFlex="100"> -->
-  <div>
+<div>
 <header class="header-content header">
   <div class="logo-content">
       <img src="../../../assets/logo.png" alt="Logo">
@@ -15,8 +14,6 @@
         <div class="form-head-text">Person Address Form</div>
         <button (click)="cancel()" mat-button style="font-style: italic;">Cancel</button>
     </div>
-
-
     <div fxLayout="column" fxLayout.xs="column" class="top-space" >
      <div fxLayout="column" fxLayout.xs="column" class="space">
         <label for="name" >Name</label>
@@ -25,7 +22,6 @@
             <input matInput placeholder="Name" formControlName="name" required>
           </mat-form-field>
       </div>
-
       <div fxLayout="column" fxLayout.xs="column" class="space">
          <label for="phone"  >Phone</label>
           <mat-form-field appearance="outline" fxFlex="82%">
@@ -33,7 +29,6 @@
             <input matInput placeholder="Your Phone Number" formControlName="phoneNumber" required>
           </mat-form-field>
       </div>
-
       <div fxLayout="column" fxLayout.xs="column" class="space">
         <label for="Address">Address</label>
         <mat-form-field appearance="outline" fxFlex="82%">
@@ -78,7 +73,6 @@
           </div>
         </div>
       </div>
-     
       <div fxLayoutAlign="center center" fxLayoutGap="180px">
         <button [disabled]="!form.valid" type="submit" mat-raised-button color="primary">Add Contact</button>
       </div>

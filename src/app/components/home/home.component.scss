@@ -2,7 +2,6 @@
   padding: 15px 0;
   background-color: white;
 }
-
 .header-content {
   display: flex;
   flex-direction: row;
@@ -39,7 +38,6 @@ body {
   padding: 15px 0;
   background-color: #ffffff;
 }
-
 .emp-text {
   font: normal normal bold 25px/50px Montserrat;
   font-family: "Montserrat", sans-serif;
@@ -68,7 +66,6 @@ body {
 .emp-payroll {
   color: #42515f;
 }
-
 .add-button{
   font-size: 21px;
   font-family: Roboto;
@@ -93,8 +90,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // width: 100%;
-  margin: 10px auto;
+   margin: 10px auto;
   padding: 25px;
 }
 .person-details{

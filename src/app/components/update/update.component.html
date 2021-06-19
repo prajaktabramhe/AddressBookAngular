@@ -4,7 +4,6 @@
           <div class="form-head-text">Update Persons Details</div>
           <button  (click)="cancel()" mat-button style="font-style: italic;">Cancel</button>
       </div>
-
       <div fxLayout="column" fxLayout.xs="column" class="top-space" >
         <div fxLayout="column" fxLayout.xs="column" class="space">
           <label for="name">Name</label>
@@ -13,7 +12,6 @@
               <input matInput placeholder="Last Name" [(ngModel)]="name" formControlName="name">
             </mat-form-field>
         </div>
-    
         <div fxLayout="column" fxLayout.xs="column" class="space">
           <label for="phone">Phone Number</label>
             <mat-form-field appearance="outline" fxFlex="82%">
@@ -21,7 +19,6 @@
               <input matInput placeholder="Your Phone Number" [(ngModel)]="phoneNumber" formControlName="phoneNumber">
             </mat-form-field>
         </div>
-
         <div fxLayout="column" fxLayout.xs="column" class="space">
           <label for="Address"> Address</label>
           <mat-form-field appearance="outline" fxFlex="82%">
@@ -66,12 +63,10 @@
             </div>
       </div>
     </div>
-
-        <div fxLayoutAlign="center center" fxLayoutGap="180px">
+    <div fxLayoutAlign="center center" fxLayoutGap="180px">
           <button type="submit" mat-raised-button color="primary">Add Contact</button>
-        </div>
-
-      </div>
-    </form>
+    </div>
   </div>
+</form>
+</div>
 
