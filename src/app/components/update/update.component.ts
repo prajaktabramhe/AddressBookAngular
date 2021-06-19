@@ -35,7 +35,6 @@ console.log(data);
     this.city = data.contact.city;
     this.state = data.contact.state;
     this.zip = data.contact.zip;
-    // this.stateselect = data.contact.state;
   }
 
   ngOnInit(){
@@ -75,7 +74,6 @@ console.log(data);
   }
 
   cancel(){
-    // this.router.navigateByUrl('home');
     this.dialogRef.close();
   }
 
