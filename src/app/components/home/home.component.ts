@@ -11,7 +11,6 @@ import { UpdateComponent } from './../update/update.component';
 })
 
 export class HomeComponent implements OnInit {
-
   contactList: any;
   constructor(private contactService: ContactServiceService, private router: Router, private dialog: MatDialog) { }
 
@@ -19,16 +18,13 @@ export class HomeComponent implements OnInit {
       this.getAllContacts();
   }
   
-
   getAllContacts(){
     this.contactService.getAllContacts().subscribe((res: any) => {
       console.log(res);
       this.contactList = res.data;
     })
   }
-
   
-
   delete(id){
    
     this.contactService.deleteEmployee(id).subscribe((response) => {
@@ -60,7 +56,6 @@ export class HomeComponent implements OnInit {
       this.getAllContacts();
     })
   }
-
 
   addNewContact(){
     console.log('redirecting now');
