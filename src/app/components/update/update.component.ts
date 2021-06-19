@@ -19,7 +19,7 @@ export class UpdateComponent implements OnInit {
     {state: 'Punjab', cities: ['Amritsar', 'Chandigarh', 'DEF', 'GHI']}
   ]
 
-  name; phoneNumber; address; city; state; zip; stateselect;
+  name; phoneNumber; address; city; state; zip; 
    form: FormGroup;
   submitted: false;
   constructor(public dialogRef: MatDialogRef<UpdateComponent>,
@@ -35,7 +35,7 @@ console.log(data);
     this.city = data.contact.city;
     this.state = data.contact.state;
     this.zip = data.contact.zip;
-    this.stateselect = data.contact.state;
+    // this.stateselect = data.contact.state;
   }
 
   ngOnInit(){
