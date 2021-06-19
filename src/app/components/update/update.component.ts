@@ -57,7 +57,7 @@ console.log(data);
         city: this.form.value.city,
         name: this.form.value.name,
         phoneNumber: this.form.value.phoneNumber,
-        state: this.form.value.state,
+        state: this.form.value.state.state,
         zip: this.form.value.zip
       }
       this.contactService.updateContact(this.data.contact.addressBookId, reqObj).subscribe((response) => {
@@ -79,4 +79,5 @@ console.log(data);
     this.dialogRef.close();
   }
 
+  
 }
