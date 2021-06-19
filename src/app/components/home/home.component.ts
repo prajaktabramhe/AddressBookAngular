@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactServiceService } from './../../services/contact/contact-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateComponent } from './../update/update.component';
-
 
 @Component({
   selector: 'app-home',
@@ -17,14 +16,14 @@ export class HomeComponent implements OnInit {
   constructor(private contactService: ContactServiceService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.getAllContacts();
+      this.getAllContacts();
   }
   
 
   getAllContacts(){
     this.contactService.getAllContacts().subscribe((res: any) => {
       console.log(res);
-      this.contactList = res.data.sort();
+      this.contactList = res.data;
     })
   }
 
@@ -67,6 +66,29 @@ export class HomeComponent implements OnInit {
     console.log('redirecting now');
     this.router.navigateByUrl('add')
   }
+
+  sortName = true;
+  ascendingName(){
+    this.sortName = !this.sortName;
+    this.contactList.sort((a, b) => (a.name < b.name ? -1 : 1));
+  }
+
+  descendingName(){
+    this.sortName = !this.sortName;
+    this.contactList.sort((a, b) => (a.name > b.name ? -1 : 1));
+  }
+
+  sortZip = true;
+  ascendingZip(){
+    this.sortZip = !this.sortZip;
+    this.contactList.sort((a, b) => (a.zip < b.zip ? -1 : 1));
+  }
+
+  descendingZip(){
+    this.sortZip = !this.sortZip;
+    this.contactList.sort((a, b) => (a.zip > b.zip ? -1 : 1));
+  }
+
 }
 
 @Component({

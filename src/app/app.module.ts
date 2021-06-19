@@ -20,8 +20,6 @@ import {MatIconModule} from '@angular/material/icon';
 import { UpdateComponent } from './components/update/update.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,9 +47,8 @@ import { UpdateComponent } from './components/update/update.component';
     MatDialogModule,
     MatSelectModule,
     MatIconModule,
-    MatDialogModule,
-  
-   
+    MatDialogModule
+     
   ],
   providers: [],
   bootstrap: [AppComponent]

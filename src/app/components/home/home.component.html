@@ -23,12 +23,20 @@
   <table id="table-display" class="table">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>
+          Name &nbsp;&nbsp;
+          <img src="../../../assets/upArrow.png" style="width: 20px; height: 20px;" (click)="ascendingName()" *ngIf="sortName">
+          <img src="../../../assets/downArrow.png" style="width: 20px; height: 20px;" (click)="descendingName()" *ngIf="!sortName">
+        </th>
         <th>Phone Number</th>
         <th>Address</th>
         <th>State</th>
         <th>City</th>
-        <th>Zip Code</th>
+        <th>
+          Zip Code &nbsp;&nbsp;
+          <img src="../../../assets/upArrow.png" style="width: 20px; height: 20px;" (click)="ascendingZip()" *ngIf="sortZip" >
+          <img src="../../../assets/downArrow.png" style="width: 20px; height: 20px;" (click)="descendingZip()" *ngIf="!sortZip" >
+        </th>
         <th></th>
       </tr>
     </thead>
@@ -41,7 +49,7 @@
       <td>{{contact.zip}}</td>
       <td>
         <button mat-button (click)="ConfirmDelete(contact.addressBookId)"><img id="{{contact.addressBookId}}"  alt="delete " src="../../../assets/delete-black-18dp.svg"></button>
-       <img id="{{contact.addressBookId}}" (click)="update(contact)"  alt="edit" src="../../../assets/create-black-18dp.svg"> 
+        <img id="{{contact.addressBookId}}" (click)="update(contact)"  alt="edit" src="../../../assets/create-black-18dp.svg"> 
       </td>
     </tr>
   </table>
